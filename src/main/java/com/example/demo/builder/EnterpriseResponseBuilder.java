@@ -11,10 +11,11 @@ import java.util.Set;
 
 import org.apache.commons.lang3.tuple.Pair;
 
-import com.example.demo.request.ColumnVO;
-import com.example.demo.request.EnterpriseGetRowsRequest;
-import com.example.demo.response.EnterpriseGetRowsResponse;
+import com.example.demo.dto.ColumnVO;
+import com.example.demo.dto.EnterpriseGetRowsRequest;
+import com.example.demo.dto.EnterpriseGetRowsResponse;
 import com.google.common.collect.Sets;
+
 
 public class EnterpriseResponseBuilder {
 

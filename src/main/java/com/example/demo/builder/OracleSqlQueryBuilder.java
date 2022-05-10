@@ -21,12 +21,12 @@ import java.util.stream.Stream;
 
 import org.apache.commons.lang3.tuple.Pair;
 
-import com.example.demo.filter.ColumnFilter;
-import com.example.demo.filter.NumberColumnFilter;
-import com.example.demo.filter.SetColumnFilter;
-import com.example.demo.request.ColumnVO;
-import com.example.demo.request.EnterpriseGetRowsRequest;
-import com.example.demo.request.SortModel;
+import com.example.demo.dto.ColumnFilter;
+import com.example.demo.dto.ColumnVO;
+import com.example.demo.dto.EnterpriseGetRowsRequest;
+import com.example.demo.dto.NumberColumnFilter;
+import com.example.demo.dto.SetColumnFilter;
+import com.example.demo.dto.SortModel;
 import com.google.common.collect.Sets;
 
 /**
