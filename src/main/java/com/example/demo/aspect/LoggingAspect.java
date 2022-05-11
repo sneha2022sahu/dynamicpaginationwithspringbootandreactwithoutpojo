@@ -82,9 +82,9 @@ public class LoggingAspect {
 	        }
 	    }
 	        @Before(value="execution(* com.example.demo.controller.*.*(..))|| within(com.example.demo.dao.*)")
-		    public void logStatementBefore(JoinPoint joinPoint1)
+		    public void logStatementBefore(JoinPoint joinPoint)
 		    {
-		    	 log.info("Executing {} ",joinPoint1);
+		    	 log.info("Executing {} ",joinPoint);
 		    }
 	    }
 	    
