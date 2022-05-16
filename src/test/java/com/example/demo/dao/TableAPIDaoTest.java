@@ -1,4 +1,4 @@
-package com.example.demo.com.example.demo;
+package com.example.demo.dao;
 
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.when;
