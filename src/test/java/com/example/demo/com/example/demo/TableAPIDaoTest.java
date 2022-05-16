@@ -33,23 +33,11 @@ public class TableAPIDaoTest {
     JdbcTemplate jdbcTemplate;
 
 
-    @Before public void setUp(){
-        EnterpriseGetRowsRequest request = new EnterpriseGetRowsRequest();
-    }
-
     @Test
     public void geDataFromEnterpriseGetRowsResponse() {
 
-        /*
-         * EnterpriseGetRowsRequest request = new EnterpriseGetRowsRequest();
-         *
-         * ColumnVO colmnVo= new ColumnVO();
-         *
-         * List<ColumnVO> colomnVoList= new ArrayList<>();
-         *
-         * colomnVoList.add(colmnVo);
-         */
-        String json="{\"startRow\":0,\"endRow\":100,\"rowGroupCols\":[{\"id\":\"PRODUCT\",\"displayName\":\"Product\",\"field\":\"PRODUCT\"},{\"id\":\"PORTFOLIO\",\"displayName\":\"Portfolio\",\"field\":\"PORTFOLIO\"},{\"id\":\"BOOK\",\"displayName\":\"Book\",\"field\":\"BOOK\"}],\"valueCols\":[{\"id\":\"CURRENTVALUE\",\"aggFunc\":\"sum\",\"displayName\":\"Current\",\"field\":\"CURRENTVALUE\"},{\"id\":\"PREVIOUSVALUE\",\"aggFunc\":\"sum\",\"displayName\":\"Previous\",\"field\":\"PREVIOUSVALUE\"},{\"id\":\"PL1\",\"aggFunc\":\"sum\",\"displayName\":\"PL 1\",\"field\":\"PL1\"},{\"id\":\"PL2\",\"aggFunc\":\"sum\",\"displayName\":\"PL 2\",\"field\":\"PL2\"},{\"id\":\"GAINDX\",\"aggFunc\":\"sum\",\"displayName\":\"Gain-DX\",\"field\":\"GAINDX\"},{\"id\":\"SXPX\",\"aggFunc\":\"sum\",\"displayName\":\"SX / PX\",\"field\":\"SXPX\"},{\"id\":\"X99OUT\",\"aggFunc\":\"sum\",\"displayName\":\"99 Out\",\"field\":\"X99OUT\"}],\"pivotCols\":[],\"pivotMode\":false,\"groupKeys\":[],\"filterModel\":{},\"sortModel\":[]}";
+
+        String json = "{\"startRow\":0,\"endRow\":100,\"rowGroupCols\":[{\"id\":\"PRODUCT\",\"displayName\":\"Product\",\"field\":\"PRODUCT\"},{\"id\":\"PORTFOLIO\",\"displayName\":\"Portfolio\",\"field\":\"PORTFOLIO\"},{\"id\":\"BOOK\",\"displayName\":\"Book\",\"field\":\"BOOK\"}],\"valueCols\":[{\"id\":\"CURRENTVALUE\",\"aggFunc\":\"sum\",\"displayName\":\"Current\",\"field\":\"CURRENTVALUE\"},{\"id\":\"PREVIOUSVALUE\",\"aggFunc\":\"sum\",\"displayName\":\"Previous\",\"field\":\"PREVIOUSVALUE\"},{\"id\":\"PL1\",\"aggFunc\":\"sum\",\"displayName\":\"PL 1\",\"field\":\"PL1\"},{\"id\":\"PL2\",\"aggFunc\":\"sum\",\"displayName\":\"PL 2\",\"field\":\"PL2\"},{\"id\":\"GAINDX\",\"aggFunc\":\"sum\",\"displayName\":\"Gain-DX\",\"field\":\"GAINDX\"},{\"id\":\"SXPX\",\"aggFunc\":\"sum\",\"displayName\":\"SX / PX\",\"field\":\"SXPX\"},{\"id\":\"X99OUT\",\"aggFunc\":\"sum\",\"displayName\":\"99 Out\",\"field\":\"X99OUT\"}],\"pivotCols\":[],\"pivotMode\":false,\"groupKeys\":[],\"filterModel\":{},\"sortModel\":[]}";
 
 
         ObjectMapper m = new ObjectMapper();
@@ -57,11 +45,9 @@ public class TableAPIDaoTest {
         try {
             request = m.readValue(json, EnterpriseGetRowsRequest.class);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         }
-
-        System.out.println(request);
 
 
         List<Map<String, Object>> response = new ArrayList<Map<String, Object>>();
