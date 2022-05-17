@@ -9,27 +9,27 @@ import lombok.Data;
 @Data
 public class EnterpriseGetRowsRequest implements Serializable {
 
-	private int startRow, endRow;
+    private int startRow, endRow;
 
-	// row group columns
-	private List<ColumnVO> rowGroupCols;
+    // row group columns
+    private List<ColumnVO> rowGroupCols;
 
-	// value columns
-	private List<ColumnVO> valueCols;
+    // value columns
+    private List<ColumnVO> valueCols;
 
-	// pivot columns
-	private List<ColumnVO> pivotCols;
+    // pivot columns
+    private List<ColumnVO> pivotCols;
 
-	// true if pivot mode is one, otherwise false
-	private boolean pivotMode;
+    // true if pivot mode is one, otherwise false
+    private boolean pivotMode;
 
-	// what groups the user is viewing
-	private List<String> groupKeys;
+    // what groups the user is viewing
+    private List<String> groupKeys;
 
-	// if filtering, what the filter model is
-	private Map<String, ColumnFilter> filterModel;
+    // if filtering, what the filter model is
+    private Map<String, ColumnFilter> filterModel;
 
-	// if sorting, what the sort model is
-	private List<SortModel> sortModel;
+    // if sorting, what the sort model is
+    private List<SortModel> sortModel;
 
 }
