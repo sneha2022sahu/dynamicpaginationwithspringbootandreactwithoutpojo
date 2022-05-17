@@ -6,11 +6,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 
 @SpringBootApplication
-@EnableSwagger2
 public class AgGridServerSideExamleApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AgGridServerSideExamleApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(AgGridServerSideExamleApplication.class, args);
+    }
 
 }
