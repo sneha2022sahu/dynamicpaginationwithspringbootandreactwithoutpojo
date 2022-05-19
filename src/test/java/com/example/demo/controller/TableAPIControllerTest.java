@@ -17,22 +17,22 @@ import com.example.demo.dto.EnterpriseGetRowsResponse;
 
 public class TableAPIControllerTest {
 
-	@InjectMocks
-	private TableAPIController tableAPIController;
+    @InjectMocks
+    private TableAPIController tableAPIController;
 
-	@Mock
-	private TableAPIDao tableAPIDao;
+    @Mock
+    private TableAPIDao tableAPIDao;
 
-	@Test
-	public void getRowsFromEnterpriseGetRowsResponse() {
+    @Test
+    public void getRowsFromEnterpriseGetRowsResponse() {
 
-		EnterpriseGetRowsRequest request = new EnterpriseGetRowsRequest();
-		EnterpriseGetRowsResponse response = new EnterpriseGetRowsResponse();
-		when(tableAPIDao.getData(request)).thenReturn(response);
-		EnterpriseGetRowsResponse expectedResponse = tableAPIController.getRows(request);
+        EnterpriseGetRowsRequest request = new EnterpriseGetRowsRequest();
+        EnterpriseGetRowsResponse response = new EnterpriseGetRowsResponse();
+        when(tableAPIDao.getData(request)).thenReturn(response);
+        EnterpriseGetRowsResponse expectedResponse = tableAPIController.getRows(request);
 
-		assertNotNull(expectedResponse);
+        assertNotNull(expectedResponse);
 
-	}
+    }
 
 }

@@ -22,41 +22,26 @@ import com.example.demo.dto.EnterpriseGetRowsRequest;
 import com.example.demo.dto.EnterpriseGetRowsResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-
 @RunWith(SpringJUnit4ClassRunner.class)
 public class TableAPIDaoTest {
-
     @InjectMocks
     private TableAPIDao tableAPIDao;
-
     @Mock
     JdbcTemplate jdbcTemplate;
 
-
     @Test
     public void geDataFromEnterpriseGetRowsResponse() {
-
-
         String json = "{\"startRow\":0,\"endRow\":100,\"rowGroupCols\":[{\"id\":\"PRODUCT\",\"displayName\":\"Product\",\"field\":\"PRODUCT\"},{\"id\":\"PORTFOLIO\",\"displayName\":\"Portfolio\",\"field\":\"PORTFOLIO\"},{\"id\":\"BOOK\",\"displayName\":\"Book\",\"field\":\"BOOK\"}],\"valueCols\":[{\"id\":\"CURRENTVALUE\",\"aggFunc\":\"sum\",\"displayName\":\"Current\",\"field\":\"CURRENTVALUE\"},{\"id\":\"PREVIOUSVALUE\",\"aggFunc\":\"sum\",\"displayName\":\"Previous\",\"field\":\"PREVIOUSVALUE\"},{\"id\":\"PL1\",\"aggFunc\":\"sum\",\"displayName\":\"PL 1\",\"field\":\"PL1\"},{\"id\":\"PL2\",\"aggFunc\":\"sum\",\"displayName\":\"PL 2\",\"field\":\"PL2\"},{\"id\":\"GAINDX\",\"aggFunc\":\"sum\",\"displayName\":\"Gain-DX\",\"field\":\"GAINDX\"},{\"id\":\"SXPX\",\"aggFunc\":\"sum\",\"displayName\":\"SX / PX\",\"field\":\"SXPX\"},{\"id\":\"X99OUT\",\"aggFunc\":\"sum\",\"displayName\":\"99 Out\",\"field\":\"X99OUT\"}],\"pivotCols\":[],\"pivotMode\":false,\"groupKeys\":[],\"filterModel\":{},\"sortModel\":[]}";
-
-
         ObjectMapper m = new ObjectMapper();
         EnterpriseGetRowsRequest request = null;
         try {
             request = m.readValue(json, EnterpriseGetRowsRequest.class);
         } catch (IOException e) {
-
             e.printStackTrace();
         }
-
-
         List<Map<String, Object>> response = new ArrayList<Map<String, Object>>();
-
         when(jdbcTemplate.queryForList(Mockito.anyString())).thenReturn(response);
         EnterpriseGetRowsResponse expectedResponse = tableAPIDao.getData(request);
-
         assertNotNull(expectedResponse);
-
     }
-
 }

@@ -30,7 +30,7 @@ public class TableAPIController {
 
     @PostMapping(value = "/getRows")
     //@ResponseBody
-    public EnterpriseGetRowsResponse getRows(@RequestBody @Valid EnterpriseGetRowsRequest request) {
+    public EnterpriseGetRowsResponse getRows(@Valid @RequestBody EnterpriseGetRowsRequest request) {
         return tableAPIDao.getData(request);
     }
 }

@@ -13,7 +13,7 @@ import lombok.NonNull;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EnterpriseGetRowsRequest implements Serializable {
-@NonNull
+    @NonNull
     private int startRow, endRow;
 
     // row group columns

@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
         property = "filterType")
 @JsonSubTypes({
         @JsonSubTypes.Type(value = NumberColumnFilter.class, name = "number"),
-        @JsonSubTypes.Type(value = SetColumnFilter.class, name = "set") })
+        @JsonSubTypes.Type(value = SetColumnFilter.class, name = "set")})
 public abstract class ColumnFilter {
     String filterType;
 }

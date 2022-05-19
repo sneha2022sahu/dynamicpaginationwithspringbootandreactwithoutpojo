@@ -9,7 +9,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ErrorMessage extends RuntimeException{
+public class ErrorMessage extends RuntimeException {
     private int statusCode;
     private Date timestamp;
     private String message;

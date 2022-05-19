@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SortModel implements Serializable {
-
     private String colId;
     private String sort;
 
